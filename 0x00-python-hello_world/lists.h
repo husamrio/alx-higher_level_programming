@@ -23,7 +23,7 @@ typedef struct listint_s
 } listint_t;
 
 listint_t *add_nodeint(listint_t **head, const int n);
-int cycle_check(listint_t *lst);
+int check_cycle(listint_t *list);
 size_t print_listint(const listint_t *h);
 void free_listint(listint_t *head);
 
