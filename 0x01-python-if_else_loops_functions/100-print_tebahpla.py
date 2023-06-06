@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 for ascii_value in range(122, 96, -2):
-        cs = f"{chr(ascii_value):s}{chr(ascii_value + ord('A') - ord('a') - 1):s}"
-        print("{:s}".format(cs), end="")
+    cs = f"{chr(ascii_value):s}{chr(ascii_value + ord('A') - ord('a') - 1):s}"
+    print("{:s}".format(cs), end="")
 
 # alternative method:
 # for i in range(ord('z'), ord('a')-1, -1):
