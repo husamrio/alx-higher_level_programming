@@ -4,7 +4,7 @@ def remove_char_at(str, n):
         return str[:n] + str[n+1:]
     else:
         return str
- # Remove a character from a string at a given index.
+    # Remove a character from a string at a given index.
     #    Args:
     #        str (str): The string to remove the character from.
     #        n (int): The index of the character to remove.
