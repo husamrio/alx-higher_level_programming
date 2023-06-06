@@ -9,7 +9,7 @@ def uppercase(str):
         None
     """
     for j in str:
-        if ord(j) >= ord('a') and ord(j) <= ord('z'):
-            j = chr(ord(j) - ord('a') + ord('A'))
-        print("{:s}".format(j), end="")
-    print("{}".format(""))
+        if (ord(j) >= ord('a')) and (ord(j) <= ord('z')):
+            j = chr(ord(j)-ord('a')+ord('A'))
+        print("{}".format(j), end="")
+    print()
