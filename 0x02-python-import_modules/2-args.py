@@ -9,5 +9,5 @@ if __name__ == "__main__":
 
     print(f"{size} {argument_string}{punctuation}")
 
-    for idx, arg in enumerate(userin, start=1):
+    for idx, arg in enumerate(userin, start=0):
         print(f"{idx}: {arg}")
