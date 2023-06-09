@@ -22,7 +22,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * What is sequence unpacking
 * What is the del statement and how to use it
 ## Tasks
-0. Print a list of integers
+## 0. Print a list of integers
 mandatory
 Write a function that prints all integers of a list.
 
