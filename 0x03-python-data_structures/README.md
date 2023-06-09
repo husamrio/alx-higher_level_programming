@@ -1,5 +1,5 @@
 #0x03. Python - Data Structures: Lists, Tuples
-##Resources
+## Resources
 Read or watch:
 
 - 3.1.3. Lists
@@ -8,7 +8,7 @@ Read or watch:
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-##General
+## General
 * Why Python programming is awesome
 * What are lists and how to use them
 * What are the differences and similarities between strings and lists
@@ -21,7 +21,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * What is tuple packing
 * What is sequence unpacking
 * What is the del statement and how to use it
-##Tasks
+## Tasks
 0. Print a list of integers
 mandatory
 Write a function that prints all integers of a list.
@@ -32,7 +32,7 @@ Write a function that prints all integers of a list.
 * You can assume that the list only contains integers
 * You are not allowed to cast integers into strings
 * You have to use str.format() to print integers
-###1. Secure access to an element in a list
+## 1. Secure access to an element in a list
 mandatory
 Write a function that retrieves an element from a list like in C.
 
@@ -41,7 +41,7 @@ Write a function that retrieves an element from a list like in C.
 * If idx is out of range (> of number of element in my_list), the function should return None
 * You are not allowed to import any module
 * You are not allowed to use try/except
-###2. Replace element
+## 2. Replace element
 mandatory
 Write a function that replaces an element of a list at a specific position (like in C).
 
@@ -50,7 +50,7 @@ Write a function that replaces an element of a list at a specific position (like
 * If idx is out of range (> of number of element in my_list), the function should not modify anything, and returns the original list
 * You are not allowed to import any module
 * You are not allowed to use try/except
-### Print a list of integers... in reverse!
+## Print a list of integers... in reverse!
 mandatory
 Write a function that prints all integers of a list, in reverse order.
 
@@ -60,7 +60,7 @@ You are not allowed to import any module
 You can assume that the list only contains integers
 You are not allowed to cast integers into strings
 You have to use str.format() to print integers
-###4. Replace in a copy
+## 4. Replace in a copy
 mandatory
 Write a function that replaces an element in a list at a specific position without modifying the original list (like in C).
 
@@ -69,7 +69,7 @@ Write a function that replaces an element in a list at a specific position witho
 * If idx is out of range (> of number of element in my_list), the function should return a copy of the original list
 * You are not allowed to import any module
 * You are not allowed to use try/except
-###5. Can you C me now?
+## 5. Can you C me now?
 mandatory
 Write a function that removes all characters c and C from a string.
 
@@ -77,7 +77,7 @@ Write a function that removes all characters c and C from a string.
 * The function should return the new string
 * You are not allowed to import any module
 * You are not allowed to use str.replace()
-###6. Lists of lists = Matrix
+## 6. Lists of lists = Matrix
 mandatory
 Write a function that prints a matrix of integers.
 
@@ -87,7 +87,7 @@ Write a function that prints a matrix of integers.
 * You can assume that the list only contains integers
 * You are not allowed to cast integers into strings
 * You have to use str.format() to print integers
-###7. Tuples addition
+## 7. Tuples addition
 mandatory
 Write a function that adds 2 tuples.
 
@@ -99,14 +99,14 @@ Write a function that adds 2 tuples.
 * You can assume that the two tuples will only contain integers
 * If a tuple is smaller than 2, use the value 0 for each missing integer
 * If a tuple is bigger than 2, use only the first 2 integers
-###8. More returns!
+## 8. More returns!
 mandatory
 Write a function that returns a tuple with the length of a string and its first character.
 
 * Prototype: def multiple_returns(sentence):
 * If the sentence is empty, the first character should be equal to None
 * You are not allowed to import any module
-###9. Find the max
+## 9. Find the max
 mandatory
 Write a function that finds the biggest integer of a list.
 
@@ -115,7 +115,7 @@ Write a function that finds the biggest integer of a list.
 * You can assume that the list only contains integers
 * You are not allowed to import any module
 * You are not allowed to use the builtin max()
-###10. Only by 2
+## 10. Only by 2
 mandatory
 Write a function that finds all multiples of 2 in a list.
 
@@ -123,7 +123,7 @@ Write a function that finds all multiples of 2 in a list.
 * Return a new list with True or False, depending on whether the integer at the same position in the original list is a multiple of 2
 * The new list should have the same size as the original list
 * You are not allowed to import any module
-###11. Delete at
+## 11. Delete at
 mandatory
 Write a function that deletes the item at a specific position in a list.
 
@@ -131,14 +131,14 @@ Write a function that deletes the item at a specific position in a list.
 * If idx is negative or out of range, nothing change (returns the same list)
 * You are not allowed to use pop()
 * You are not allowed to import any module
-###12. Switch
+## 12. Switch
 mandatory
 Complete the source code in order to switch value of a and b
 
 * You can find the source code here
 * Your code should be inserted where the comment is (line 4)
 * Your program should be exactly 5 lines long
-###13. Linked list palindrome
+## 13. Linked list palindrome
 mandatory
 Technical interview preparation:
 
@@ -149,7 +149,7 @@ Technical interview preparation:
 * Prototype: int is_palindrome(listint_t **head);
 * Return: 0 if it is not a palindrome, 1 if it is a palindrome
 * An empty list is considered a palindrome
-###14. CPython #0: Python lists
+## 14. CPython #0: Python lists
 advanced
 CPython is the reference implementation of the Python programming language. Written in C, CPython is the default and most widely used implementation of the language.
 Since we now know a bit of C, we can look at what is happening under the hood of Python. Let’s have fun with Python and C, and let’s look at what makes Python so easy to use.
