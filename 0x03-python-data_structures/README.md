@@ -50,7 +50,7 @@ Write a function that replaces an element of a list at a specific position (like
 * If idx is out of range (> of number of element in my_list), the function should not modify anything, and returns the original list
 * You are not allowed to import any module
 * You are not allowed to use try/except
-## Print a list of integers... in reverse!
+## 3. Print a list of integers... in reverse!
 mandatory
 Write a function that prints all integers of a list, in reverse order.
 
