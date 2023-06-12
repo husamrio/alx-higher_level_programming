@@ -3,8 +3,6 @@
 
 def delete_at(my_list=[], idx=0):
     """Deletes item at specific position in a list"""
-    result = []
-    for i, item in enumerate(my_list):
-        if i != idx:
-            result.append(item)
-    return result
+    if idx >= 0 and idx < len(my_list):
+        my_list[:] = my_list[:idx] + my_list[idx + 1:]
+    return my_list
