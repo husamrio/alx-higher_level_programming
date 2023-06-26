@@ -8,5 +8,5 @@ def safe_print_division(a, b):
     except (ZeroDivisionError, TypeError):
         pass
     finally:
-        print("The division result is: {}".format(quot))
+        print("Inside result: {}".format(quot))
         return quot
