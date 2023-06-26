@@ -12,5 +12,5 @@ def safe_function(fct, *args):
     try:
         return fct(*args)
     except Exception as e:
-        stderr.write("An error occurred: {}\n".format(e))
+        stderr.write("Exception: {}\n".format(e))
         return None
