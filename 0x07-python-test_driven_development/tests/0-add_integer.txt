@@ -1,0 +1,68 @@
+def test_add_integer():
+    """
+    Test cases for the add_integer function.
+    """
+    # Import the add_integer function
+    from 0-add_integer import add_integer
+
+    # SUCCESS CASES:
+
+    # Test signed and unsigned ints and floats
+    assert add_integer(1, 2) == 3
+    assert add_integer(-1, 2) == 1
+    assert add_integer(1.5, 2.9) == 3
+    assert add_integer(-2.9, 1) == -1
+
+    # Test use of default b=98 value
+    assert add_integer(1) == 99
+
+    # FAIL CASES:
+
+    # Test no args
+    try:
+        add_integer(None)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+
+    try:
+        add_integer(None, None)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+
+    # Test extra args
+    try:
+        add_integer(1, 2, 3)
+    except TypeError as e:
+        assert str(e) == "add_integer() takes from 1 to 2 positional arguments but 3 were given"
+
+    # Test other data types
+    try:
+        add_integer("hey")
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+
+    try:
+        add_integer(0, [1, 2, 3])
+    except TypeError as e:
+        assert str(e) == "b must be an integer"
+
+    # Test max/min numbers Python can handle
+    try:
+        add_integer(float("inf"))
+    except OverflowError as e:
+        assert str(e) == "cannot convert float infinity to integer"
+
+    try:
+        add_integer(float("-inf"))
+    except OverflowError as e:
+        assert str(e) == "cannot convert float infinity to integer"
+
+    # Test special float NaN in Python
+    try:
+        add_integer(float("NaN"))
+    except ValueError as e:
+        assert str(e) == "cannot convert float NaN to integer"
+
+# Run the test cases
+test_add_integer()
+
