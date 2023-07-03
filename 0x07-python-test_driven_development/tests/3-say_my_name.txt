@@ -1,0 +1,33 @@
+# what's my name?
+# 3-say_my_name.txt
+# run test with python3 -m doctest -v ./tests/3-say_my_name.txt
+3-say_my_name.py
+================
+
+This module defines a function `say_my_name(first_name, last_name="")` that prints a person's full name.
+
+Usage
+-----
+
+Call the function with the person's first and last names as arguments:
+
+```python
+say_my_name = __import__('3-say_my_name').say_my_name
+say_my_name("John", "Doe")
+# Output: My name is John Doe
+Copy
+The last_name parameter is optional. If not provided, only the first name is printed:
+
+say_my_name("John")
+# Output: My name is John
+Copy
+Error Handling
+Both first_name and last_name must be strings. If either parameter is not a string, a TypeError is raised:
+
+say_my_name(6, "Doe")
+# Output: TypeError: first_name must be a string
+Copy
+At least one name (the first_name) must be provided. If no arguments are provided, a TypeError is raised:
+
+say_my_name()
+# Output: TypeError: say_my_name() missing 1 required positional argument: 'first_name'
