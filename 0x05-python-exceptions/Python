@@ -1,0 +1,3 @@
+[master f6456f8] ByteCode -
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ mode change 100644 => 100755 0x05-python-exceptions/102-magic_calculation.py
