@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """
-Module 2-rectangle
 Contains class Rectangle with private attribute width and height,
 and public area and perimeter methods
 """
@@ -8,11 +7,11 @@ and public area and perimeter methods
 
 class Rectangle:
     """
-    Defines class rectangle with private attribute width and height
+    Rectangle class with private attributes width and height.
 
     Args:
-        width (int): width
-        height (int): height
+        width (int): Width of the rectangle.
+        height (int): Height of the rectangle.
 
     Functions:
         __init__(self, width, height)
@@ -24,7 +23,13 @@ class Rectangle:
         perimeter(self)
     """
     def __init__(self, width=0, height=0):
-        """ Initialize rectangles """
+        """
+        Initializes the Rectangle.
+
+        Args:
+            width (int): Width of the rectangle.
+            height (int): Height of the rectangle.
+        """
         self._width = 0
         self._height = 0
         self.width = width
@@ -32,12 +37,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """ Getter returns width """
+        """Getter for the width attribute."""
         return self._width
 
     @width.setter
     def width(self, value):
-        """ Setter sets width if int > 0 """
+        """Setter for the width attribute."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -46,12 +51,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """ Getter returns height """
+        """Getter for the height attribute."""
         return self._height
 
     @height.setter
     def height(self, value):
-        """ Setter sets height if int > 0 """
+        """Setter for the height attribute."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -59,11 +64,21 @@ class Rectangle:
         self._height = value
 
     def area(self):
-        """ Return width * height """
+        """
+        Returns the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
         return self._width * self._height
 
     def perimeter(self):
-        """ Return 2*width + 2*height (or return 0 if width or height is 0)"""
+        """
+        Returns the perimeter of the rectangle.
+
+        Returns:
+            int: The perimeter of the rectangle.
+        """
         if self._width == 0 or self._height == 0:
             return 0
         return (2 * self._width) + (2 * self._height)
