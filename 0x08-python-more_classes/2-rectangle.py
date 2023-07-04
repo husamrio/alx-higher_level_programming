@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 """
-Module 3-rectangle
-Contains class Rectangle with private attributes width and height,
-and public area and perimeter methods
+Rectangle Module
+Contains Rectangle class with private attributes width and height,
+and public methods for area and perimeter.
 """
 
 
 class Rectangle:
     """
-    Defines class rectangle with private attributes width and height
+    Rectangle class with private attributes width and height.
 
     Args:
-        width (int): width
-        height (int): height
+        width (int): Width of the rectangle
+        height (int): Height of the rectangle
 
-    Functions:
+    Methods:
         __init__(self, width, height)
         get_width(self)
         set_width(self, value)
@@ -25,47 +25,40 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
-        """ Initialize rectangles """
+        """Initialize a rectangle."""
         self.set_width(width)
         self.set_height(height)
 
     def get_width(self):
-        """ Getter returns width """
+        """Get the width of the rectangle."""
         return self.__width
 
     def set_width(self, value):
-        """ Setter sets width if int >= 0 """
+        """Set the width of the rectangle."""
         if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+            raise TypeError("Width must be an integer.")
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("Width must be greater than or equal to 0.")
         self.__width = value
 
     def get_height(self):
-        """ Getter returns height """
+        """Get the height of the rectangle."""
         return self.__height
 
     def set_height(self, value):
-        """ Setter sets height if int >= 0 """
+        """Set the height of the rectangle."""
         if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+            raise TypeError("Height must be an integer.")
         if value < 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError("Height must be greater than or equal to 0.")
         self.__height = value
 
     def area(self):
-        """ Return width * height """
+        """Calculate the area of the rectangle."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """ Return 2*width + 2*height (or return 0 if width or height is 0)"""
+        """Calculate the perimeter of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return (2 * self.__width) + (2 * self.__height)
-
-# Test the Rectangle class
-
-
-my_rectangle = Rectangle(5, 6)
-print("Area: {} - Perimeter: {}".format(my_rectangle.area(),
-                                        my_rectangle.perimeter()))
+        return 2 * (self.__width + self.__height)
