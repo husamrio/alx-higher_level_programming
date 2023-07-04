@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with private attribute width and height,
-public area and perimeter methods, allows printing #'s, and deletes."""
+"""Rectangle class with private attribute width and height"""
 
 
 class Rectangle:
