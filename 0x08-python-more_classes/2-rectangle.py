@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-class Rectangle:
-    """
+
+"""
     Defines a rectangle with private attributes width and height,
     and public methods for calculating area and perimeter.
-    """
+"""
+
+
+class Rectangle:
     def __init__(self, width=0, height=0):
         """Initialize rectangle with given width and height."""
         self.width = width
