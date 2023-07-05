@@ -1,57 +1,36 @@
 #!/usr/bin/python3
-"""
-Rectangle Module
-
-Defines the Rectangle class with private attributes for width and height.
-Includes methods for calc area and perimeter, custom print using given symbol,
-tracking the numb of instances, and a static method to compare two rectangles.
-"""
+"""Module containing the Rectangle class."""
 
 
 class Rectangle:
-    """
-    Rectangle class with private attributes width and height.
+    """Class representing a rectangle.
 
-    Attributes:
-        number_of_instances (int): Number of instances created and not deleted.
-        print_symbol (any): Symbol used for printing string representation.
-
-    Functions:
-        __init__(self, width=0, height=0): Initializes a rectangle instance.
-        __del__(self): Deletes an instance of the class.
-        width(self): Getter method for width attribute.
-        width(self, value): Setter method for width attribute.
-        height(self): Getter method for height attribute.
-        height(self, value): Setter method for height attribute.
-        area(self): Calculates the area of the rectangle.
-        perimeter(self): Calculates the perimeter of the rectangle.
-        __str__(self): Returns the string representation of the rectangle.
-        __repr__(self):Return string representation to recreate a new instance.
-        bigger_or_equal(rect_1, rect_2): Method to compare two rectangles.
+    Class Attributes:
+        number_of_instances (int): The total number of Rectangle instances.
+        print_symbol (any): The symbol used when printing the rectangle.
     """
 
     number_of_instances = 0
-    print_symbol = "*"
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initializes a rectangle instance."""
+        """Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+        """
+        self.__class__.number_of_instances += 1
         self.width = width
         self.height = height
-        type(self).number_of_instances += 1
-
-    def __del__(self):
-        """Deletes an instance of the class."""
-        print("Bye rectangle...")
-        type(self).number_of_instances -= 1
 
     @property
     def width(self):
-        """Getter method for width attribute."""
+        """int: The width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter method for width attribute."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -60,12 +39,11 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter method for height attribute."""
+        """int: The height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter method for height attribute."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -73,28 +51,69 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Calculates the area of the rectangle."""
-        return self.__width * self.__height
+        """Calculate and return the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
+        return self.width * self.height
 
     def perimeter(self):
-        """Calculates the perimeter of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
+        """Calculate and return the perimeter of the rectangle.
+
+        Returns:
+            int: The perimeter of the rectangle.
+        """
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
-
-    def __str__(self):
-        """Returns the string representation of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join([str(self.print_symbol) * self.__width
-                          for _ in range(self.__height)])
-
-    def __repr__(self):
-        """Returns a string representation to recreate a new instance."""
-        return f"Rectangle({self.__width}, {self.__height})"
+        return 2 * (self.width + self.height)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Static method to compare two rectangle and return the bigger one."""
+        """Return the larger of two Rectangle instances based on their area.
+
+        Args:
+            rect_1 (Rectangle): The first rectangle instance.
+            rect_2 (Rectangle): The second rectangle instance.
+
+        Returns:
+            Rectangle: The larger of the two rectangles.
+
+        Raises:
+            TypeError: If either rect_1 or rect_2 is not Rectangle.
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
+
+    def __str__(self):
+        """Return a string representation of the rectangle using print_symbol.
+
+        Returns:
+            str: A string representation of the rectangle. If either width or
+            height is 0, returns an empty string.
+        """
+        if self.width == 0 or self.height == 0:
+            return ""
+
+        row = str(self.print_symbol) * self.width
+        rows = [row for _ in range(self.height)]
+
+        return "\n".join(rows)
+
+    def __repr__(self):
+        """Return a string rep of the rectangle in the format
+        'Rectangle(width, height)'.
+
+        Returns:
+            str: A string representation of the rectangle.
+        """
+        return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """Handle deletion of a Rectangle instance."""
+        self.__class__.number_of_instances -= 1
+        print("Bye rectangle...")
