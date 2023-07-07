@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Import the matrix_mul function
 from matrix_mul import matrix_mul
 
