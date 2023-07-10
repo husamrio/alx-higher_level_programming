@@ -2,7 +2,8 @@
 """
 Module 0-lookup:
 
-This module contains the `lookup` method, which returns a list of an object's attributes and methods.
+This module contains the `lookup` method, which returns a
+list of an object's attributes and methods.
 """
 
 
