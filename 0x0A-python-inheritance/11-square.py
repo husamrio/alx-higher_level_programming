@@ -25,6 +25,12 @@ class Square(Rectangle):
         __init__(self, size)
         __str__(self)
     """
+
+    def __str__(self):
+        """prints [Rectangle] <width>/<height>"""
+        return "[{:s}] {:d}/{:d}".format(self.__class__.__name__,
+                                         self.__size, self.__size)
+
     def __init__(self, size):
         """initializes size
         Args:
@@ -34,8 +40,3 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
-
-    def __str__(self):
-        """prints [Rectangle] <width>/<height>"""
-        return "[{:s}] {:d}/{:d}".format(self.__class__.__name__,
-                                         self.__size, self.__size)
