@@ -1,24 +1,35 @@
 #!/usr/bin/python3
-Rectangle = __import__('8-rectangle').Rectangle
+"""
+Module 8-rectangle:
 
-# Create a new Rectangle object with width 3 and height 5
-r = Rectangle(3, 5)
+This module contains two classes: `BaseGeometry` and `Rectangle`.
 
-# Print the string representation of the Rectangle object
-print(r)
-# Print the list of available attributes and methods of the Rectangle object
-print(dir(r))
+`BaseGeometry` has public instance methods `area` and `integer_validator`.
 
-# Attempt to print the width and height of the Rectangle object
-try:
-    print("Rectangle: {} - {}".format(r.width, r.height))
-except Exception as e:
-    # If an exception occurs, print the exception class name and message
-    print("[{}] {}".format(e.__class__.__name__, e))
+`Rectangle` is a subclass of `BaseGeometry` and has private attributes
+`width` and `height`, which are validated by the parent class.
+"""
 
-# Attempt to create a new Rectangle object with invalid arguments
-try:
-    r2 = Rectangle(4, True)
-except Exception as e:
-    # If an exception occurs, print the exception class name and message
-    print("[{}] {}".format(e.__class__.__name__, e))
+
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+class Rectangle(BaseGeometry):
+    """
+This class inherits from the BaseGeometry class and has the
+following methods:
+    - __init__(self, width, height): Initializes a new instance
+    of the class with the given width and height.
+"""
+
+    def __init__(self, width, height):
+        """
+This method validates and initializes the width and height of the object.
+Args:
+    width (int): The width of the object, which is a private attribute.
+    height (int): The height of the object, which is a private attribute.
+"""
+        super().integer_validator("width", width)
+        self.__width = width
+        super().integer_validator("height", height)
+        self.__height = height
