@@ -5,6 +5,4 @@ const data = [
     'Python is cool',
     'JavaScript is amazing'
   ];
-  
   data.forEach(line => console.log(line));
-  
