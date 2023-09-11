@@ -1,9 +1,6 @@
 #!/usr/bin/node
 
-const data = [
-    'C is fun',
-    'Python is cool',
-    'JavaScript is amazing'
-  ];
-  
-data.forEach(line => console.log(line));
+const lines = ['C is fun', 'Python is cool', 'Javascript is amazing'];
+for (const l of lines) {
+  console.log(l);
+}
