@@ -7,3 +7,4 @@ const data = [
   ];
   
   data.forEach(line => console.log(line));
+  
